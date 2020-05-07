@@ -83,7 +83,7 @@ $('#mySelect').change(function(){
      function(data) {
         L.geoJson(data, {
             pointToLayer: function(feature, latlng) { if (feature.properties.crash_year==value)
-              { return L.circleMarker(latlng, myStyle(feature,latlng)).bindPopup('Year: '+feature.properties.crash_year+"<dd>"+"</dd>"+'Time of the day: '+feature.properties.time_of_da+"<dd>"+"</dd>"+'Injury: '+feature.properties.injury_cou+"<dd>"+"</dd>"+'Fatal: '+feature.properties.fatal_coun+"<dd>"+"</dd>"+'People Involved: '+feature.properties.person_cou);}
+              { return L.circleMarker(latlng, myStyle(feature,latlng)).bindPopup('Year: '+feature.properties.crash_year+"<dd>"+"</dd>"+'Month: '+feature.properties.crash_mont+"<dd>"+"</dd>"+'Time of the day: '+feature.properties.time_of_da+"<dd>"+"</dd>"+'Injury: '+feature.properties.injury_cou+"<dd>"+"</dd>"+'Fatal: '+feature.properties.fatal_coun+"<dd>"+"</dd>"+'People Involved: '+feature.properties.person_cou+"<dd>"+"</dd>"+'Weather: '+feature.properties.weather+"<dd>"+"</dd>"+'Illumination Condition: '+feature.properties.illuminati);}
               }
         }).addTo(map);
     });
