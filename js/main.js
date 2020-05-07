@@ -16,7 +16,7 @@ var myStyle = function(feature) {
       radius: 1,
       //fillColor: "#ffcc5c",
       color: "#66CDD9",
-      opacity: 0.5,
+      opacity: 0.6,
       fillOpacity: 1
     };
   }
