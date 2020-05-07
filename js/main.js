@@ -116,6 +116,19 @@ $('#mySelect2').change(function(){
     });
 });
 
+$('#mySelect3').change(function(){
+    removeMarkers()
+    var value = $(this).val();
+    $.getJSON("https://raw.githubusercontent.com/derrickshu/JS_Final/master/crash.json",
+     function(data) {
+        L.geoJson(data, {
+            pointToLayer: function(feature, latlng) { if (feature.properties.illuminati==value)
+              { return L.circleMarker(latlng, myStyle(feature,latlng)).bindPopup('Year: '+feature.properties.crash_year+"<dd>"+"</dd>"+'weather: '+feature.properties.weather+"<dd>"+"</dd>"+'Injury: '+feature.properties.injury_cou+"<dd>"+"</dd>"+'Fatal: '+feature.properties.fatal_coun+"<dd>"+"</dd>"+'People Involved: '+feature.properties.person_cou);}
+              }
+        }).addTo(map);
+    });
+});
+
 //Filter by time of the day
 $('#morning').click(function(){
   removeMarkers()
